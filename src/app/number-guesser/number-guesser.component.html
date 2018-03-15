@@ -1,0 +1,32 @@
+<body>
+  <header>
+    <h1>Number
+      <span class="thin-letters">Guesser</span>
+    </h1>
+  </header>
+
+  <section>
+    <article class="min-max">
+      <input id="min-range" type="number" [value]='minRange' [(ngModel)]="minRange">
+      <input id="max-range" type="number" [value]='maxRange' [(ngModel)]="maxRange">
+      <button id="param-btn" type="button" name="setparams" (click)="setParams()">Set Parameters</button>
+    </article>
+
+    <article class="get-input">
+      <input id="inptbx" type="number" name="numberguess" placeholder="Enter your guess" [(ngModel)]="guessNum">
+      <button id="guessbtn" type="button" name="guessbtn" [disabled]="enableBtn()" (click)="checkGuess()">Guess</button>
+      <button id="clrbtn" type="button" name="clrbtn" [disabled]="enableBtn()" (click)="clearField()">Clear</button>
+    </article>
+
+    <article class="give-feedback">
+      <p id="your-guess">{{ yourGuess }}</p>
+      <h2 id="num-output">{{ range }}</h2>
+      <h2 id="num-output">{{ guessOutput }}</h2>
+      <p id="fdbck">{{ feedback }}</p>
+    </article>
+
+    <article class="reset">
+      <button id="resetbtn" type="reset" name="button" (click)="reset()">Reset</button>
+    </article>
+  </section>
+</body>
